@@ -1,0 +1,120 @@
+/**
+ * Clearfix
+ */
+@mixin clearfix {
+	&:after {
+	  content: "";
+	  display: table;
+	  clear: both;
+	}
+}
+
+
+/**
+ * CSS Utilities
+ */
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+@mixin transform( $args... ) {
+	-webkit-transform: $args;
+	-moz-transition: $args;
+	-ms-transform: $args;
+	transform: $args;
+}
+@mixin box-shadow( $params... ) {
+  -webkit-box-shadow:$params;
+  -moz-box-shadow:$params;
+  box-shadow:$params;
+}
+
+
+/**
+ * Animation
+ */
+@mixin keyframes( $animation_name ) {
+	@-webkit-keyframes #{ $animation_name } {
+		@content;
+	}
+
+	@-moz-keyframes #{ $animation_name } {
+		@content;
+	}
+
+	@-o-keyframes #{ $animation_name } {
+		@content;
+	}
+
+	@keyframes #{ $animation_name } {
+		@content;
+	}
+}
+@mixin animation( $name, $duration, $default-timing, $iterations, $direction, $delay, $fill ) {
+    -webkit-animation-name: $name;
+    -webkit-animation-duration: $duration;
+    -webkit-animation-timing-function: $default-timing;
+    -webkit-animation-iteration-count: $iterations;
+    -webkit-animation-direction: $direction;
+    -webkit-animation-delay: $delay;
+    -webkit-animation-fill-mode: $fill;
+
+    -moz-animation-name: $name;
+    -moz-animation-duration: $duration;
+    -moz-animation-timing-function: $default-timing;
+    -moz-animation-iteration-count: $iterations;
+    -moz-animation-direction: $direction;
+    -moz-animation-delay: $delay;
+    -moz-animation-fill-mode: $fill;
+
+    -o-animation-name: $name;
+    -o-animation-duration: $duration;
+    -o-animation-timing-function: $default-timing;
+    -o-animation-iteration-count: $iterations;
+    -o-animation-direction: $direction;
+    -o-animation-delay: $delay;
+    -o-animation-fill-mode: $fill;
+
+    animation-name: $name;
+    animation-duration: $duration;
+    animation-timing-function: $default-timing;
+    animation-iteration-count: $iterations;
+    animation-direction: $direction;
+    animation-delay: $delay;
+    animation-fill-mode: $fill;
+}
+@mixin animation-timing-function( $timing ) {
+	-webkit-animation-timing-function: $timing;
+	-moz-animation-timing-function: $timing;
+	-o-animation-timing-function: $timing;
+	animation-timing-function: $timing;
+}
+@mixin animation-play-state( $state ) {
+	-webkit-animation-play-state: $state;
+	-moz-animation-play-state: $state;
+	-o-animation-play-state: $state;
+	animation-play-state: $state;
+}
+
+
+/**
+ * Icons
+ */
+@mixin icon( $code ){
+  font-style:normal;
+  cursor:pointer;
+
+  &:before{
+    position:absolute;
+    display:block;
+    top:50%;
+    width:100%;
+    text-align:center;
+    line-height:100%;
+    font-family:'icons';
+    content: $code;
+  }
+}

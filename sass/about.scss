@@ -1,0 +1,149 @@
+#about{
+	@include viewport();
+}
+
+
+.about-animation {
+	position:relative;
+	width:300%;
+	height:0.25em;
+	left:-100%;
+	padding:0 0 0 100%;
+	font-size:4em;
+	text-align:left;
+
+	@media #{$x-small}{
+		font-size:6em;
+	}
+	@media #{$small}{
+		font-size:8em;
+	}
+}
+
+// Why not translate3d? Because Safari just CAN'T HANDLE THE MADNESS.
+@include keyframes( dyn ) {
+	0%, 50%, 100% {
+		left: 0;
+		margin-left:0px;
+		@include animation-timing-function( $pendulum-out );
+	}
+	25% {
+		left: -1 * $pendulum-dist;
+		margin-left: -1.4 * $pendulum-dist;
+		@include animation-timing-function( $pendulum-in );
+	}
+}
+@include keyframes( able ) {
+	0%, 50%, 100% {
+		left: 0;
+		@include animation-timing-function( $pendulum-out );
+	}
+	25% {
+		left: $pendulum-dist;
+		@include animation-timing-function( $pendulum-in );
+	}
+}
+
+
+.anim {
+	position:relative;
+	display:block;
+	float:left;
+	line-height:1;
+
+	&.dyn {
+		@include animation( dyn, $pendulum-time, linear, infinite, normal, 0, none );
+		@include animation-play-state( paused );
+	}
+
+	&.dyn.running {
+		@include animation-play-state( running );
+	}
+
+	&.able {
+		@include animation( able, $pendulum-time, linear, infinite, normal, ( $pendulum-time / 2 ), none );
+		@include animation-play-state( paused );
+	}
+
+	&.able.running{
+		@include animation-play-state( running );
+	}
+}
+
+
+.about-slogan {
+	margin:50px 0 0;
+	font-size:1.3em;
+	text-align:left;
+	color:#ccc;
+}
+
+/*
+.about-copy {
+	font-family: 'Roboto Slab', serif;
+	font-size:16px;
+	color:#ccc;
+}
+*/
+
+.getit {
+	color:#fff;
+}
+
+
+.about-contact{
+	display:block;
+	margin:40px auto 0;
+	padding:0;
+	text-align:left;
+
+	li{
+		display:inline-block;
+		list-style:none;
+		overflow:hidden;
+		margin:0 15px 0 0;
+	}
+}
+
+
+%about-contact-method{
+	position:relative;
+	display:block;
+	width:$social-size-mobile;
+	height:$social-size-mobile;
+	text-indent:-500px;
+	color:#ccc;
+
+	&:before{
+		@include transition( color 800ms ease );
+		text-indent:0;
+		font-size:$social-size-mobile;
+		margin-top:-1 * $social-size-mobile / 2;
+		color:#ccc;
+	}
+
+	&:hover:before{
+		@include transition( none );
+		color:#fff;
+	}
+
+	@media #{$small}{
+		width: $social-size-small;
+		height:$social-size-small;
+
+		&:before{
+			font-size:$social-size-small;
+			margin-top:-1 * $social-size-small / 2
+		}
+	}
+}
+
+.linkedin{
+	@extend %about-contact-method;
+	@include icon( '\e802' );
+}
+.github{
+	@extend %about-contact-method;
+	@include icon( '\e801' );
+}
+

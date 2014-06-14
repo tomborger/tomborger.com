@@ -1,0 +1,42 @@
+/**
+ * Variables
+ */
+
+// Define media queries
+$medium: "screen and (min-width:1025px)";
+$small: "screen and (min-width:768px)";
+$x-small: "screen and (min-width:568px)";
+
+// Height of header
+$header-height: 50px;
+
+// Animation
+$pendulum-dist: 20%;
+$pendulum-time: 3000ms;
+$pendulum-in: cubic-bezier(.2,0,1,.2);
+$pendulum-out: cubic-bezier(0,.2,.2,1);
+$ws-transition: linear;
+
+// Size of work sample thumbnail
+$ws: 275px;
+
+// Size of social media icons
+$social-size-mobile: 40px;
+$social-size-small: 60px;
+
+/*
+// Height of header
+$header-small: 50px;
+$header-medium: 50px;
+
+// Width and height of nav boxes/bars
+$nw-small: 1024px;
+$nh-small: 75px;
+$nw-medium: 150px;
+$nh-medium: 150px;
+
+
+// Pendulum
+
+$navWidth: 150px;
+*/
