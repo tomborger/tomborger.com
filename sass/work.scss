@@ -4,6 +4,7 @@
 
 
 .work-samples{
+	@include transform( translate3d(0, 0, 0));
 	list-style:none;
 	margin:0;
 	padding:0;
@@ -12,7 +13,6 @@
 
 
 .work-sample-item{
-	position:relative;
 	display:inline-block;
 	width:100%;
 	max-width:$ws;
