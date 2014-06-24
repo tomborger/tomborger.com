@@ -37,14 +37,6 @@ $(function(){
 		// Activate a work sample
 		activate: function( $frame ){
 
-			// Disable scrolling of #work contents, and (more importantly) reset 
-			// scrollTop to its original value so even if it glitches, it rights
-			// itself quickly.
-			var workScrollTop = $('#work').scrollTop();
-			$('#work').on('scroll', function(){
-				$(this).scrollTop( workScrollTop );
-			});
-
 			var _this = this;
 
 			this.active = true;
@@ -87,9 +79,6 @@ $(function(){
 
 				_this.$sample.removeClass('obscuring').css( _this.resetDetachedStyles() );
 				
-				// All scrolling on #work again
-				$('#work').off('scroll');
-
 			}, 300 );
 
 			// Reset object
