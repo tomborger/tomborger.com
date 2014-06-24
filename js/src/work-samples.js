@@ -49,7 +49,7 @@ $(function(){
 			this.$sample = this.$frame.find('.work-sample');
 
 			// Position sample outside of flow while the list is hidden
-			this.$sample.css( this.getDetachedStyles() ).addClass( 'highlighting' );
+			this.$sample.css( this.getDetachedStyles() ).addClass( 'highlighting' ).appendTo('body');
 
 			// Hide work samples
 			setTimeout( function(){
@@ -60,6 +60,7 @@ $(function(){
 			// Delayed until after list transition
 			setTimeout( function(){
 				_this.$sample.addClass( 'highlighted' ).removeClass( 'highlighting' ).css( _this.resetDetachedStyles() );
+				$('body').append("<a class='back-button'>Back</a>");
 			}, 50 );
 
 		},
@@ -77,7 +78,9 @@ $(function(){
 
 			setTimeout( function(){
 
-				_this.$sample.removeClass('obscuring').css( _this.resetDetachedStyles() );
+				_this.$sample.removeClass('obscuring').css( _this.resetDetachedStyles() ).appendTo( _this.$frame );
+
+				$('.back-button').remove();
 				
 			}, 300 );
 
@@ -95,7 +98,7 @@ $(function(){
 				}
 			});
 
-			$( '.back-button' ).on( 'click', function(){
+			$(document).on( 'click', '.back-button', function(){
 				if( _this.active ){
 					_this.deactivate();
 				}
