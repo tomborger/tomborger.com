@@ -63,12 +63,15 @@
 					?>
 
 					<li class='work-sample'>
-						<span class='work-sample-label'><?php echo tb_the_work_sample_tags(); ?></span>
-						<h3 class='work-sample-title'><?php the_title(); ?></h3>
-						<figure class='work-sample-image' style='background-image:url(<?php tb_the_thumbnail_url(); ?>)'>
+						<figure class='work-sample-illustration'>
+							<?php the_post_thumbnail( 'full', array( 'class' => 'work-sample-image' ) ); ?>
 							<figcaption class='work-sample-content'>
-								<a class='work-sample-link' href='<?php the_field('hyperlink'); ?>' target='_blank'>Visit</a>
-								<?php the_content(); ?>
+								<span class='work-sample-label'><?php echo tb_the_work_sample_tags(); ?></span>
+								<h3 class='work-sample-title'><?php the_title(); ?></h3>
+								<p class='work-sample-description'>
+									<a class='work-sample-link' href='<?php the_field('hyperlink'); ?>' target='_blank'>Visit</a>
+									<?php the_content(); ?>
+								</p>
 							</figcaption>
 						</figure>
 					</li>
