@@ -57,21 +57,18 @@
 				<ul class='work-samples'>
 
 				<?php
-				$work_samples = get_work_samples();
+				$work_samples = tb_get_work_samples();
 				foreach( $work_samples as $post ){
 					setup_postdata( $post );
 					?>
 
-					<li class='work-sample-item'>
-						<figure class='work-sample'>
-							<?php the_post_thumbnail( 'full', array( 'class' => 'work-sample-image' ) ); ?>
+					<li class='work-sample'>
+						<span class='work-sample-label'><?php echo tb_the_work_sample_tags(); ?></span>
+						<h3 class='work-sample-title'><?php the_title(); ?></h3>
+						<figure class='work-sample-image' style='background-image:url(<?php tb_the_thumbnail_url(); ?>)'>
 							<figcaption class='work-sample-content'>
-								<span class='work-sample-label'><?php echo the_work_sample_tags(); ?></span>
-								<h3 class='work-sample-title'><?php the_title(); ?></h3>
-								<p class='work-sample-description'>
-									<a class='work-sample-link' href='<?php the_field('hyperlink'); ?>' target='_blank'>Visit</a>
-									<?php the_content(); ?>
-								</p>
+								<a class='work-sample-link' href='<?php the_field('hyperlink'); ?>' target='_blank'>Visit</a>
+								<?php the_content(); ?>
 							</figcaption>
 						</figure>
 					</li>

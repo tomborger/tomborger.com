@@ -3,6 +3,19 @@
  */
 $(function(){
 
+	$('.work-sample').on('touchstart', function(){
+		$(this).addClass('opaque');
+	});
+
+	$('.work-sample').on('touchend', function(){
+		$(this).removeClass('opaque');
+	});
+
+	$('.work-sample').on('click', function(){
+		$(this).toggleClass('expanded');
+	});
+
+/*
 	var ws = {
 
 		// Bool: is a work sample currently selected?
@@ -104,5 +117,5 @@ $(function(){
 	}
 
 	ws.init();
-
+*/
 });

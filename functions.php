@@ -80,11 +80,11 @@ function tb_clean_up_admin(){
 }
 
 /**
- * get_work_samples
+ * tb_get_work_samples
  * 
  * Utility function to get list of work sample post objects
  */
-function get_work_samples(){
+function tb_get_work_samples(){
 
 	$work_samples = get_posts( array(
 		'posts_per_page' => 100,
@@ -98,11 +98,11 @@ function get_work_samples(){
 }
 
 /**
- * the_work_sample_tags
+ * tb_the_work_sample_tags
  *
  * Utility function to get tag list for work sample (minus the links)
  */
-function the_work_sample_tags(){
+function tb_the_work_sample_tags(){
 	global $post;
 	$tags = get_the_tags( $post->ID );
 	$i = 0;
@@ -113,6 +113,18 @@ function the_work_sample_tags(){
 			echo '&nbsp;&nbsp;/&nbsp;&nbsp;';
 		}
 	}
+}
+
+/**
+ * tb_the_thumbnail_url
+ * 
+ * Utility function to get the URL of a post thumbnail
+ */
+function tb_the_thumbnail_url(){
+	global $post;
+	$thumbnail_id = get_post_thumbnail_id( $post->ID );
+	$thumbnail_src = wp_get_attachment_image_src( $thumbnail_id, 'full' );
+	echo $thumbnail_src[0];
 }
 
 /**

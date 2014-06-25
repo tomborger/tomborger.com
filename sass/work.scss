@@ -1,8 +1,116 @@
 #work{
 	@include viewport();
+	padding:0;
+}
+
+.work-samples{
+	@include transform( translate3d( 0, 0, 0 ) );
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+
+.work-sample{
+	@include no-select;
+	@include transition( max-height 300ms ease );
+	position:relative;
+	display:block;
+	float:left;
+	width:100%;
+	height:auto;
+	min-height:$ws;
+	max-height:$ws;
+	overflow:hidden;
+	background-color:#222;
+	cursor:pointer;
+
+	&:nth-child(2n+0){
+		background-color:#1c1c1c;
+	}
+
+	&.expanded{
+		max-height:1000px;
+	}
+
+	@media #{$medium} {
+		@include ok-select;
+		width:50%;
+	}
 }
 
 
+.work-sample-label{
+	@include transition( padding 300ms ease );
+	position:relative;
+	display:block;
+	margin:25px 0 0;
+	padding:0 25px;
+	font-size:14px;
+	text-transform:uppercase;
+	text-shadow:3px 3px 3px #000;
+	z-index:1;
+
+	.work-sample.expanded &{
+		padding:60% 25px 0;
+	}
+}
+
+
+.work-sample-title{
+	position:relative;
+	padding:0 25px;
+	font-size:40px;
+	text-shadow:3px 3px 3px #000;
+	line-height:45px;
+	z-index:1;
+}
+
+.work-sample-image{
+	@include transition( opacity 600ms 200ms ease );
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:0;
+	padding:0 0 $ws 0;
+	margin:0;
+	background-size:cover;
+	opacity:0;
+
+	.work-sample.opaque &{
+		@include transition( opacity 1ms linear );
+		opacity:0.5;		
+	}
+
+	.work-sample.expanded &,
+	.work-sample.opaque.expanded &{
+		opacity:1;
+		padding:0 0 60% 0;
+	}
+
+	@media #{$medium} {
+		.work-sample:hover &{
+			@include transition( opacity 1ms linear );
+			// @include box-shadow( inset 1px 1px 10px rgba(255,255,255,0.25), inset -1px -1px 10px rgba(255,255,255,0.25) );
+			opacity:0.5;
+		}
+
+		.work-sample.expanded:hover &{
+			opacity:1;
+		}
+	}
+}
+
+.work-sample-content{
+	max-height:0;
+	overflow:hidden;
+
+	.work-sample.expanded &{
+		max-height:1000px;
+	}
+}
+
+/*
 .work-samples{
 	@include transform( translate3d(0, 0, 0));
 	list-style:none;
@@ -117,12 +225,6 @@
 }
 
 
-.work-sample-label{
-	font-size:14px;
-	text-transform:uppercase;
-}
-
-
 .work-sample-link{
 	display:block;
 	margin:0 0 25px;
@@ -193,5 +295,5 @@
 	.work-sample-active &{
 		left:15px;
 	}
-
 }
+*/
