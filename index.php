@@ -69,7 +69,7 @@
 								<span class='work-sample-label'><?php echo tb_the_work_sample_tags(); ?></span>
 								<h3 class='work-sample-title'><?php the_title(); ?></h3>
 								<p class='work-sample-description'>
-									<?php the_content(); ?>
+									<?php echo nl2br( get_the_content() ); ?>
 								</p>
 								<menu class='work-sample-menu'>
 									<a class='work-sample-menu-close'>Close</a>
