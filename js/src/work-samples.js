@@ -12,7 +12,14 @@ $(function(){
 	});
 
 	$('.work-sample').on('click', function(){
-		$(this).toggleClass('expanded');
+		if( ! $(this).hasClass('expanded') ) {
+			$(this).addClass('expanded');
+		}
+	});
+
+	$('.work-sample-menu-close').on('click', function(e){
+		$(this).closest('.work-sample').removeClass('expanded');
+		e.stopPropagation();
 	});
 
 /*
