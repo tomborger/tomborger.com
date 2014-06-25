@@ -32,7 +32,7 @@
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#111111',GradientType=1 );
 
 	&.expanded{
-		max-height:1000px;
+		max-height:1500px;
 		cursor:default;
 	}
 
@@ -106,7 +106,12 @@
 .work-sample-description{
 	@include transition( opacity 0 );
 	display:none;
+	margin:25px 0 0;
 	opacity:0;
+	font-family:'Roboto Slab', Georgia, serif;
+	font-size:16px;
+	line-height:24px;
+	color:#ededed;
 
 	.work-sample.expanded &{
 		@include transition( opacity 300ms linear );
