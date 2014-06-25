@@ -35,6 +35,8 @@ $(function(){
 		var $target = $( '#' + $(this).attr('data-target') );
 		if( ! $target.hasClass( 'active-view' ) ){
 
+			ga( 'send', 'event', 'navigation', 'click', $(this).text(), {'nonInteraction': 1} );
+
 			$('.site-nav-item').toggleClass( 'active-nav-item' );
 
 			$target.css({
@@ -80,6 +82,10 @@ $(function(){
 	// Select correct view on load
 	$(document).ready(function(){
 		$(window).trigger('hashchange');
+	});
+
+	$( '.about-contact a' ).on( 'click', function(){
+		ga( 'send', 'event', 'links', 'click', $(this).attr('href'), {'nonInteraction': 1} );
 	});
 
 });

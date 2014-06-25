@@ -34,11 +34,6 @@ module.exports = function(grunt){
 
 		uglify: {
 	    my_target: {
-	      options: {
-		      compress: {
-		        drop_console: true
-		      }
-	      },
 	      files: {
 	        'js/interaction.js': ['js/src/*.js']
 	      }
