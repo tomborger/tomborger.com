@@ -6,6 +6,9 @@
 	  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	  <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
 
+		<meta name="description" content="Responsive, friendly, inventive, and unassuming. That's my code.">
+	  <meta property="og:description" content="Responsive, friendly, inventive, and unassuming. That's my code.">
+
 	  <title>Tom Borger | Dynamicable Front-End Web Developer</title>
 
 		<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300|Oswald:400,300' rel='stylesheet' type='text/css'>		
