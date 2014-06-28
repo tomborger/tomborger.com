@@ -30,7 +30,7 @@
 			<h1 class='site-title'><a href='http://www.tomborger.com'>Tom Borger<span class='site-title-extended'>&nbsp;&nbsp;|&nbsp;&nbsp;Front-End Web Developer</span></a></h1>
 
 			<nav class='site-nav'>
-				<h2 class='site-nav-item active-nav-item site-nav-item-about' data-target='about'>About</h2>
+				<h2 class='site-nav-item active-nav-item site-nav-item-about' data-target='about'>Home</h2>
 				<h2 class='site-nav-item site-nav-item-work' data-target='work'>Work</h2>
 			</nav>
 
