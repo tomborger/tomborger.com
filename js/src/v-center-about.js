@@ -14,20 +14,21 @@ $(function(){
 			// Content is taller than section!
 			return;
 		}
-		var topMargin = ( freeSpace / 2 ) - 25;
+		var topMargin = freeSpace / 2;
 
 		// Remove transient div
 		$('#_transient').contents().unwrap();
 
 		// Set top margin
-		$('.about-animation').css({
-			'margin-top' : topMargin
-		});
+		TweenMax.to( $('.about-animation'), 1, { marginTop: topMargin, ease:Back.easeOut } );
 
 	}
 
-	// Center on load
-	vCenterAbout();
+	setTimeout( vCenterAbout, 300 );
+
+	// Catch slow loaders
+	setTimeout( vCenterAbout, 750 );
+	setTimeout( vCenterAbout, 1500 );
 
 	// Center on resize
 	$(window).on( 'resize orientationChange', function(){

@@ -5,13 +5,13 @@
 
 
 .about-animation {
-	@include transform( rotateY(30deg) );
+	@include transform( rotateY(20deg) );
 	position:relative;
-	width:250%;
-	left:-75%;
+	width:150%;
+	left:-25%;
 	font-size:4em;
 	text-align:center;
-	margin:0;
+	margin:-500px 0 0;
 	vertical-align:bottom;
 
 	@media #{$x-small}{

@@ -5,7 +5,7 @@ $(function(){
 
 	var config = {
 		duration: 0.85,
-		distance: window.outerWidth < 700 ? '16%' : '12%',
+		distance: window.outerWidth < 700 ? '30%' : '20%',
 		ease: Circ
 	}
 
