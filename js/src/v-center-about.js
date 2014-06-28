@@ -14,7 +14,7 @@ $(function(){
 			// Content is taller than section!
 			return;
 		}
-		var topMargin = freeSpace / 2;
+		var topMargin = ( freeSpace / 2 ) - 25;
 
 		// Remove transient div
 		$('#_transient').contents().unwrap();

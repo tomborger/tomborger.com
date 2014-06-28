@@ -47,72 +47,10 @@
   -ms-user-select: text;
   user-select: text;  
 }
-
-
-/**
- * Animation
- */
-@mixin keyframes( $animation_name ) {
-	@-webkit-keyframes #{ $animation_name } {
-		@content;
-	}
-
-	@-moz-keyframes #{ $animation_name } {
-		@content;
-	}
-
-	@-o-keyframes #{ $animation_name } {
-		@content;
-	}
-
-	@keyframes #{ $animation_name } {
-		@content;
-	}
-}
-@mixin animation( $name, $duration, $default-timing, $iterations, $direction, $delay, $fill ) {
-    -webkit-animation-name: $name;
-    -webkit-animation-duration: $duration;
-    -webkit-animation-timing-function: $default-timing;
-    -webkit-animation-iteration-count: $iterations;
-    -webkit-animation-direction: $direction;
-    -webkit-animation-delay: $delay;
-    -webkit-animation-fill-mode: $fill;
-
-    -moz-animation-name: $name;
-    -moz-animation-duration: $duration;
-    -moz-animation-timing-function: $default-timing;
-    -moz-animation-iteration-count: $iterations;
-    -moz-animation-direction: $direction;
-    -moz-animation-delay: $delay;
-    -moz-animation-fill-mode: $fill;
-
-    -o-animation-name: $name;
-    -o-animation-duration: $duration;
-    -o-animation-timing-function: $default-timing;
-    -o-animation-iteration-count: $iterations;
-    -o-animation-direction: $direction;
-    -o-animation-delay: $delay;
-    -o-animation-fill-mode: $fill;
-
-    animation-name: $name;
-    animation-duration: $duration;
-    animation-timing-function: $default-timing;
-    animation-iteration-count: $iterations;
-    animation-direction: $direction;
-    animation-delay: $delay;
-    animation-fill-mode: $fill;
-}
-@mixin animation-timing-function( $timing ) {
-	-webkit-animation-timing-function: $timing;
-	-moz-animation-timing-function: $timing;
-	-o-animation-timing-function: $timing;
-	animation-timing-function: $timing;
-}
-@mixin animation-play-state( $state ) {
-	-webkit-animation-play-state: $state;
-	-moz-animation-play-state: $state;
-	-o-animation-play-state: $state;
-	animation-play-state: $state;
+@mixin perspective( $perspective ){
+  -webkit-perspective: $perspective;
+  -moz-perspective: $perspective;
+  perspective: $perspective;
 }
 
 
