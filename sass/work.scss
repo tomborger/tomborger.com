@@ -37,6 +37,7 @@
 	background: linear-gradient(135deg,  rgba(51,51,51,1) 0%,rgba(17,17,17,1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#111111',GradientType=1 );
 	*/
+	//@include transition( max-height 300ms ease );
 	position:relative; // So content can be absolutely positioned
 	display:block;
 	width:100%;
@@ -46,7 +47,7 @@
 	margin-bottom:20px;
 	
 	&.expanded{
-		height:auto;
+		max-height:10000px;
 		/*
 		max-height:1500px;
 		cursor:default;
@@ -73,8 +74,15 @@
 	height:auto;
 	opacity:0.04;
 	*/
+	position:relative; // To cast box-shadow on content
 	width:100%;
 	height:auto;
+	cursor:pointer;
+
+	.expanded &{
+		@include box-shadow( 0 5px 10px rgba(0,0,0,0.25));
+		z-index:2;
+	}
 	/*
 
 	.work-sample.opaque &{
@@ -113,12 +121,23 @@
 	}
 	*/
 	@include box-shadow( 5px -2px 5px rgba(0,0,0,0.2));
+	@include transition( background-color 300ms ease );
 	position:absolute;
 	bottom:-1px;
 	left:auto;
 	background-color:#222;
 	border-top-right-radius:20px;
 	padding:10px 20px 10px 10px;
+
+	.expanded &{
+		@include box-shadow( none );
+		position:relative;
+		top:-5px;
+		bottom:auto;
+		border-top-right-radius:0px;
+		background-color:#333;
+		padding:20px;
+	}
 }
 .work-sample-label{
 	/*
@@ -140,41 +159,39 @@
 	//text-shadow:3px 3px 3px #000;
 	line-height:40px;
 	margin-top:5px;
+	cursor:pointer;
+
+	.expanded &{
+		cursor:default;
+	}
 }
 
 .work-sample-description{
-	@include transition( opacity 0 );
 	display:none;
 	margin:25px 0 0;
-	opacity:0;
 	font-family:'Roboto Slab', Georgia, serif;
 	font-size:16px;
 	line-height:24px;
 	color:#ededed;
 
-	.work-sample.expanded &{
-		@include transition( opacity 300ms linear );
+	.expanded &{
 		display:block;
-		opacity:1;
 	}
 }
 
 .work-sample-menu{
 	display:none;
-	opacity:0;
 	padding:0;
 	margin:25px 0;
 
 	.work-sample.expanded &{
-		@include transition( opacity 300ms linear );
 		display:block;
-		opacity:1;		
 	}
 
 	a{
 		position:relative;
 		padding:5px 15px 5px 40px;
-		border:1px solid #333;
+		border:1px solid #999;
 		margin:0 10px 0 0;
 		font-family:'Oswald', sans-serif;
 		font-size:16px;
