@@ -88,7 +88,7 @@
 
 			</section>
 
-			<a class='back-button'>Back</a>
+			<a class='back-button'> </a>
 
 		</main>
 
