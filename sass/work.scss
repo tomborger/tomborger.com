@@ -23,6 +23,7 @@
 	padding:20px;
 	overflow:hidden;
 	margin-bottom:20px;
+	z-index:1; // To prevent weird layering when expanding
 	
 	&.expanded{
 		max-height:10000px;
