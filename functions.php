@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * Enable CORS - necessary for icon fonts on Firefox
+ */
+header( 'Access-Control-Allow-Origin: *' );
+
+/**
  * Declare thumbnail support
  */
 add_theme_support( 'post-thumbnails' );

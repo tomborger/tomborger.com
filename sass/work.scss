@@ -114,6 +114,7 @@
 
 	a{
 		position:relative;
+		display:inline-block;
 		padding:5px 15px 5px 40px;
 		border:1px solid #999;
 		margin:0 10px 0 0;
@@ -123,7 +124,8 @@
 		text-decoration:none;
 
 		&:before{
-			text-align:left;
+			left:0;
+			width:20px;
 			font-size:20px;
 			margin:-10px 0 0 10px;
 		}
