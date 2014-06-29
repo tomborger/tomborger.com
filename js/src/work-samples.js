@@ -3,19 +3,6 @@
  */
 $(function(){
 
-	/*
-
-	$('.work-sample').on('touchstart', function(){
-		$(this).addClass('opaque');
-	});
-
-	$('.work-sample').on('touchend', function(){
-		$(this).removeClass('opaque');
-	});
-
-
-*/
-
 	$('.work-samples').isotope({
 		itemSelector:'.work-sample',
 		layoutMode:'masonry'
