@@ -120,10 +120,10 @@ function tb_the_work_sample_tags(){
  * 
  * Utility function to get the URL of a post thumbnail
  */
-function tb_the_thumbnail_url(){
+function tb_the_thumbnail_url( $size ){
 	global $post;
 	$thumbnail_id = get_post_thumbnail_id( $post->ID );
-	$thumbnail_src = wp_get_attachment_image_src( $thumbnail_id, 'full' );
+	$thumbnail_src = wp_get_attachment_image_src( $thumbnail_id, $size );
 	echo $thumbnail_src[0];
 }
 

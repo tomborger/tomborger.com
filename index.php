@@ -67,7 +67,7 @@
 
 					<li class='work-sample'>
 						<figure class='work-sample-illustration'>
-							<?php the_post_thumbnail( 'full', array( 'class' => 'work-sample-image' ) ); ?>
+							<img class='work-sample-image' src='<?php echo get_stylesheet_directory_uri(); ?>/img/util/blank.gif' data-src='<?php tb_the_thumbnail_url( 'full' ); ?>' />
 							<figcaption class='work-sample-content'>
 								<span class='work-sample-label'><?php echo tb_the_work_sample_tags(); ?></span>
 								<h3 class='work-sample-title'><?php the_title(); ?></h3>
@@ -101,6 +101,7 @@
 		<script type='text/javascript'>
 		$(function() {
 	    FastClick.attach(document.body);
+	    $('img').unveil().trigger('unveil');
 		});
 		</script>
 

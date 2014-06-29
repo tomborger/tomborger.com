@@ -27,7 +27,7 @@ module.exports = function(grunt){
 
 		watch: {
 			css: {
-				files: ['sass/*.scss', 'js/src/*.js'],
+				files: ['sass/*.scss', 'js/src/*.js', 'js/vendor/*.js'],
 				tasks: ['compile']
 			}
 		},
@@ -35,7 +35,7 @@ module.exports = function(grunt){
 		uglify: {
 	    my_target: {
 	      files: {
-	        'js/interaction.js': ['js/src/*.js']
+	        'js/interaction.js': ['js/src/*.js','js/vendor/*.js']
 	      }
 	    }
 	  }
