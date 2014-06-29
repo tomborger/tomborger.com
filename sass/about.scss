@@ -64,6 +64,7 @@
 	height:$social-size-mobile;
 	text-indent:-500px;
 	color:#ccc;
+	text-decoration:none;
 
 	&:before{
 		@include transition( color 800ms ease );
