@@ -16,28 +16,6 @@
 }
 
 .work-sample{
-	/*
-	@include no-select;
-	@include transition( max-height 300ms ease );
-	position:relative;
-	display:block;
-	float:left;
-	width:100%;
-	height:auto;
-	min-height:$ws;
-	max-height:$ws;
-	overflow:hidden;
-	cursor:pointer;
-	background: rgb(51,51,51);
-	background: -moz-linear-gradient(-45deg,  rgba(51,51,51,1) 0%, rgba(17,17,17,1) 100%);
-	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(51,51,51,1)), color-stop(100%,rgba(17,17,17,1)));
-	background: -webkit-linear-gradient(-45deg,  rgba(51,51,51,1) 0%,rgba(17,17,17,1) 100%);
-	background: -o-linear-gradient(-45deg,  rgba(51,51,51,1) 0%,rgba(17,17,17,1) 100%);
-	background: -ms-linear-gradient(-45deg,  rgba(51,51,51,1) 0%,rgba(17,17,17,1) 100%);
-	background: linear-gradient(135deg,  rgba(51,51,51,1) 0%,rgba(17,17,17,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#111111',GradientType=1 );
-	*/
-	//@include transition( max-height 300ms ease );
 	position:relative; // So content can be absolutely positioned
 	display:block;
 	width:100%;
@@ -48,10 +26,6 @@
 	
 	&.expanded{
 		max-height:10000px;
-		/*
-		max-height:1500px;
-		cursor:default;
-		*/
 	}
 
 	@media #{$medium} {
@@ -65,15 +39,6 @@
 }
 
 .work-sample-image{
-	/*
-	@include transition( opacity 600ms 100ms ease );
-	@include transform( translate3d( 0, 0, 0 ) );
-	@include box-shadow( 0 5px 10px rgba(0,0,0,0.25));
-	position:absolute;
-	width:100%;
-	height:auto;
-	opacity:0.04;
-	*/
 	position:relative; // To cast box-shadow on content
 	width:100%;
 	height:auto;
@@ -83,43 +48,9 @@
 		@include box-shadow( 0 5px 10px rgba(0,0,0,0.25));
 		z-index:2;
 	}
-	/*
-
-	.work-sample.opaque &{
-		@include transition( opacity 1ms linear );
-		opacity:0.4;
-	}
-
-	.work-sample.expanded &,
-	.work-sample.opaque.expanded &{
-		opacity:1;
-	}
-
-	@media #{$medium} {
-
-		.work-sample:hover &{
-			@include transition( opacity 1ms linear );
-			opacity:0.4;
-		}
-
-		.work-sample.expanded:hover &{
-			opacity:1;
-		}
-	}
-	*/
 }
 
 .work-sample-content{
-	/*
-	@include transition( padding 300ms ease );
-	position:relative;
-	padding:0 25px;
-	z-index:2;
-
-	.work-sample.expanded &{
-		padding:60% 25px 25px;
-	}
-	*/
 	@include box-shadow( 5px -2px 5px rgba(0,0,0,0.2));
 	@include transition( background-color 300ms ease );
 	position:absolute;
@@ -140,13 +71,6 @@
 	}
 }
 .work-sample-label{
-	/*
-	display:block;
-	padding:25px 0 0 0;
-	font-size:14px;
-	text-transform:uppercase;
-	text-shadow:3px 3px 3px #000;
-	*/
 	display:block;
 	padding:0;
 	font-size:14px;
@@ -156,7 +80,6 @@
 
 .work-sample-title{
 	font-size:30px;
-	//text-shadow:3px 3px 3px #000;
 	line-height:40px;
 	margin-top:5px;
 	cursor:pointer;
