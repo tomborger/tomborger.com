@@ -23,11 +23,13 @@ $('.work-sample-title, .work-sample-image').on('click', function(){
 });
 
 $('.work-sample-menu-close, .work-sample-image').on('click', function(e){
-	var $ws = $(this).closest('.work-sample');
+	var top, $ws = $(this).closest('.work-sample');
 	if( $ws.hasClass('expanded') ){
 		$ws.removeClass('expanded');
 		e.stopPropagation();
 		$('.work-samples').isotope('layout');		
+		top = $ws.position().top;
+		TweenMax.to( $('#work'), 0.75, { scrollTop: top, ease:Expo.easeOut } );
 	}
 });
 

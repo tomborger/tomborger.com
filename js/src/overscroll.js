@@ -3,7 +3,7 @@
  * http://stackoverflow.com/questions/10238084
  */
 
-var selScrollable = '#work, .work-sample';
+var selScrollable = '#work, #about';
 
 $(document).on('touchmove',function(e){
   e.preventDefault();
