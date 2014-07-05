@@ -36,3 +36,10 @@ $('.work-sample-menu-close, .work-sample-image').on('click', function(e){
 $('.work-sample-menu-visit').on('click', function(){
 	ga( 'send', 'event', 'links', 'click', $(this).attr('href'), {'nonInteraction': 1} );	
 });
+
+$('.work-sample-filter').on('change', function(){
+	var filter = $(this).val();
+  $('.work-samples').isotope({
+      filter: filter
+  });
+});

@@ -16,8 +16,8 @@ add_theme_support( 'post-thumbnails' );
 add_action( 'wp_enqueue_scripts', 'tb_enqueue_frontend' );
 function tb_enqueue_frontend(){
 	wp_enqueue_style( 'tb_fontello', get_stylesheet_directory_uri() . '/fonts/fontello/css/icons.css' );
-	wp_enqueue_style( 'tb_styles', get_stylesheet_directory_uri() . '/css/style.css', false, '20140624' );
-	wp_enqueue_script( 'tb_interaction', get_stylesheet_directory_uri() . '/js/interaction.js', false, '20140624', true );
+	wp_enqueue_style( 'tb_styles', get_stylesheet_directory_uri() . '/css/style.css', false, '20140705' );
+	wp_enqueue_script( 'tb_interaction', get_stylesheet_directory_uri() . '/js/interaction.js', 'jquery', '20140705', true );
 }
 
 /**
@@ -107,15 +107,20 @@ function tb_get_work_samples(){
  *
  * Utility function to get tag list for work sample (minus the links)
  */
-function tb_the_work_sample_tags(){
+function tb_the_work_sample_tags( $class_list=false ){
 	global $post;
 	$tags = get_the_tags( $post->ID );
 	$i = 0;
 	foreach( $tags as $tag ) {
-		echo $tag->name;
-		$i++;
-		if( $i < count( $tags ) ) {
-			echo '&nbsp;&nbsp;/&nbsp;&nbsp;';
+		if( ! $class_list ){
+			echo $tag->name;
+			$i++;
+			if( $i < count( $tags ) ) {
+				echo '&nbsp;&nbsp;/&nbsp;&nbsp;';
+			}
+		}
+		else {
+			echo 'ws-' . sanitize_title( $tag->name ) . ' ';
 		}
 	}
 }

@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icons';
-  src: url('../font/icons.eot?29043691');
-  src: url('../font/icons.eot?29043691#iefix') format('embedded-opentype'),
-       url('../font/icons.woff?29043691') format('woff'),
-       url('../font/icons.ttf?29043691') format('truetype'),
-       url('../font/icons.svg?29043691#icons') format('svg');
+  src: url('../font/icons.eot?63310301');
+  src: url('../font/icons.eot?63310301#iefix') format('embedded-opentype'),
+       url('../font/icons.woff?63310301') format('woff'),
+       url('../font/icons.ttf?63310301') format('truetype'),
+       url('../font/icons.svg?63310301#icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -14,7 +14,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'icons';
-    src: url('../font/icons.svg?29043691#icons') format('svg');
+    src: url('../font/icons.svg?63310301#icons') format('svg');
   }
 }
 */
@@ -56,3 +56,4 @@
 .icon-email:before { content: '\e803'; } /* '' */
 .icon-cancel-circled:before { content: '\e804'; } /* '' */
 .icon-right-circled:before { content: '\e805'; } /* '' */
+.icon-angle-circled-down:before { content: '\e806'; } /* '' */

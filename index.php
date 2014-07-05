@@ -57,6 +57,16 @@
 
 			<section id='work' class='scrollable'>
 
+				<select class='work-sample-filter'>
+					<option value='.work-sample'>All Projects</option>
+					<option value='.ws-adaptation'>Adaptation</option>
+					<option value='.ws-angular'>Angular</option>
+					<option value='.ws-design'>Design</option>
+					<option value='.ws-html-email'>HTML Email</option>
+					<option value='.ws-sass'>SASS</option>
+					<option value='.ws-wordpress'>WordPress</option>
+				</select>
+
 				<ul class='work-samples'>
 
 				<?php
@@ -65,11 +75,11 @@
 					setup_postdata( $post );
 					?>
 
-					<li class='work-sample'>
+					<li class='work-sample <?php tb_the_work_sample_tags( true ); ?>' >
 						<figure class='work-sample-illustration'>
 							<?php the_post_thumbnail( 'full', array( 'class' => 'work-sample-image' ) ); ?>
 							<figcaption class='work-sample-content'>
-								<span class='work-sample-label'><?php echo tb_the_work_sample_tags(); ?></span>
+								<span class='work-sample-label'><?php tb_the_work_sample_tags(); ?></span>
 								<h3 class='work-sample-title'><?php the_title(); ?></h3>
 								<p class='work-sample-description'>
 									<?php echo nl2br( get_the_content() ); ?>
@@ -99,6 +109,10 @@
 		<script type='text/javascript'>
 		$(function() {
 	    FastClick.attach(document.body);
+	    $('.work-sample-filter').customSelect({
+	    	customClass: 'work-sample-filter-facade',
+	    	mapClass: false
+	    });
 		});
 		</script>
 
