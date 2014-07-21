@@ -85,8 +85,13 @@
 									<?php echo nl2br( get_the_content() ); ?>
 								</p>
 								<menu class='work-sample-menu'>
-									<a class='work-sample-menu-close'>Close</a>
+									<?php if( get_field('hyperlink') ){ ?>
 									<a class='work-sample-menu-visit' href='<?php the_field('hyperlink'); ?>' target='_blank'>Visit</a>
+									<?php } ?>
+									<?php if( get_field('github_link') ){ ?>
+									<a class='work-sample-menu-github' href='<?php the_field('github_link'); ?>' target='_blank'>View on GitHub</a>
+									<?php } ?>
+									<a class='work-sample-menu-close'>Close</a>
 								</menu>
 							</figcaption>
 						</figure>

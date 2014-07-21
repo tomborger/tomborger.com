@@ -8,6 +8,7 @@
 }
 
 .work-sample-filter{
+	@include transform( translate3d(0,0,0) );
 	display:block;
 	height:50px;
 	width:100%;
@@ -89,6 +90,7 @@
 }
 
 .work-sample-content{
+	@include clearfix;
 	@include box-shadow( 5px -2px 5px rgba(0,0,0,0.2));
 	@include transition( background-color 300ms ease );
 	position:absolute;
@@ -143,40 +145,22 @@
 .work-sample-menu{
 	display:none;
 	padding:0;
-	margin:25px 0;
+	margin:25px 0 0;
 
 	.work-sample.expanded &{
 		display:block;
 	}
-
-	a{
-		position:relative;
-		display:inline-block;
-		padding:5px 15px 5px 40px;
-		border:1px solid #999;
-		margin:0 10px 0 0;
-		font-family:'Oswald', sans-serif;
-		font-size:16px;
-		text-transform:uppercase;
-		text-decoration:none;
-
-		&:before{
-			left:0;
-			width:20px;
-			font-size:20px;
-			margin:-10px 0 0 10px;
-		}
-
-		&:hover{
-			background-color:#111;
-		}
-	}
-}
-
-.work-sample-menu-close{
-	@include icon( '\e804' );
 }
 
 .work-sample-menu-visit{
-	@include icon( '\e805' );
+	@include work-sample-button( '\e805' );
 }
+
+.work-sample-menu-github{
+	@include work-sample-button( '\e801' );
+}
+
+.work-sample-menu-close{
+	@include work-sample-button( '\e804', true );
+}
+

@@ -148,8 +148,20 @@ if(function_exists("register_field_group"))
 		'fields' => array (
 			array (
 				'key' => 'field_53a911f52f3ae',
-				'label' => 'Hyperlink',
+				'label' => 'Visit Link',
 				'name' => 'hyperlink',
+				'type' => 'text',
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'none',
+				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_53cc8374f4175',
+				'label' => 'GitHub link',
+				'name' => 'github_link',
 				'type' => 'text',
 				'default_value' => '',
 				'placeholder' => '',
