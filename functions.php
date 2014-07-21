@@ -16,7 +16,7 @@ add_theme_support( 'post-thumbnails' );
 add_action( 'wp_enqueue_scripts', 'tb_enqueue_frontend' );
 function tb_enqueue_frontend(){
 	wp_enqueue_style( 'tb_fontello', get_stylesheet_directory_uri() . '/fonts/fontello/css/icons.css' );
-	wp_enqueue_style( 'tb_styles', get_stylesheet_directory_uri() . '/css/style.css', false, '20140705' );
+	wp_enqueue_style( 'tb_styles', get_stylesheet_directory_uri() . '/css/style.css', false, '20140720' );
 	wp_enqueue_script( 'tb_interaction', get_stylesheet_directory_uri() . '/js/interaction.js', 'jquery', '20140705', true );
 }
 
